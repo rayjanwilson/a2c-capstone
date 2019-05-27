@@ -62,6 +62,8 @@ typings/
 
 ## python3 ignores
 venv/
+*.pyc
+*.pyo
 
 ## serverless.js
 .serverless
