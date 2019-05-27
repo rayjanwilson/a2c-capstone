@@ -24,6 +24,13 @@
 
 ## setting up dev environment
 
+### docker
+
+- Linux
+    - [link](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html#install_docker)
+- OS X
+    - [link](https://docs.docker.com/docker-for-mac/install/)
+
 ### python3
 
 - ensure homebrew is installed (OS X only)
