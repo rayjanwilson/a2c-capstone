@@ -62,3 +62,6 @@ typings/
 
 ## python3 ignores
 venv/
+
+## serverless.js
+.serverless
