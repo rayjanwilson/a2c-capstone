@@ -22,3 +22,50 @@
 - [Delivery Quality Program](https://drive.corp.amazon.com/folders/AWS%20ProServe%20Ops/Tools/Deal%20Quality/DQ%20Templates)
 - [Customer Satisfaction Survey](https://w.amazon.com/bin/view/AWS/Teams/Proserve/Customer_Satisfaction_V2/)
 
+## setting up dev environment
+
+### python3
+
+- ensure homebrew is installed (OS X only)
+    - `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+    - restart terminal
+- install python3
+    - OS X
+        - `brew install python3`
+    - Linux
+        - `sudo apt-get install python3`
+    - `which python3`
+        - `/usr/local/bin/python3`
+- setup virtualenvironment
+    - this will be the python you'll be using for development
+        - it makes a copy so you don't pollute your global python installation
+    - `cd a2c-capstone/webapp-api`
+    - `python3 -m venv venv`
+    - activate this python. you'll have to do this whenever you have a new terminal
+    - `source venv/bin/activate`
+    - `which python3`
+        - `/Users/rayjwil/dev/git/a2c-capstone/webapp-api/venv/bin/python3`
+
+### node and serverless.js
+
+- ensure homebrew is installed (OS X only)
+    - `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+    - restart terminal
+- install git
+    - OS X
+        - `brew install git`
+    - Linux
+        - `sudo apt-get install git`
+    - `which git`
+        - `/usr/local/bin/git`
+- install node version manager
+    - [link](https://github.com/nvm-sh/nvm)
+    - `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash`
+        - you may have to fiddle with your bash or zsh profile files
+        - details are in the link provided above
+    - `nvm install v12`
+    - `node --version`
+        - `v12.3.1`
+- install serverless.js
+    - `npm install -g serverless`
+        - `1.43.0`
