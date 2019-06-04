@@ -13,6 +13,14 @@
 - When a feature is developed, it should be merged into dev through a pull request. 
 - Dev will occasionally be merged into master through a pull request.
 
+## Project Components and ownership
+- Greengrass infrastructure (Ray)
+- Greengrass lambdas (all)
+- Data ingestion through IoT stuff (Tim)
+- Data processing with IoT Analytics + storage (Phanee)
+- Web App - react app setup (Ray)
+- Web App - dashboards, cleanup UI, cognito (Sumeet)
+
 ## Link to Proserve Templates
 - [Weekly Status Reports](https://confluence.aws-proserve.org/confluence/pages/viewpage.action?spaceKey=EDF&title=How+to+produce+a+weekly+status+-+Internal)
 - [Migration Readiness (MRA)](https://confluence.aws-proserve.org/confluence/display/STAGE/Readiness+Assessment)
