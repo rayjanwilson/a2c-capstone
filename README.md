@@ -54,12 +54,18 @@
 - setup virtualenvironment
     - this will be the python you'll be using for development
         - it makes a copy so you don't pollute your global python installation
-    - `cd a2c-capstone/webapp-api`
-    - `python3 -m venv venv`
+    - `cd a2c-capstone`
+    - OS X
+        - `brew install pipenv`
+    - Linux
+        - `sudo apt-get install pipenv`
+    - create the virtualenv
+        - `pipenv --python 3.7`
     - activate this python. you'll have to do this whenever you have a new terminal
-    - `source venv/bin/activate`
-    - `which python3`
-        - `/Users/rayjwil/dev/git/a2c-capstone/webapp-api/venv/bin/python3`
+        - `pipenv shell`
+    - verify it's setup correctly
+        - `pipenv --venv`
+        - `/Users/rayjwil/.local/share/virtualenvs/a2c-capstone`
 
 ### node and serverless.js
 
