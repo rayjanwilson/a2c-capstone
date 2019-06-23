@@ -1,0 +1,14 @@
+[Unit]
+Description=AWS Greengrass Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/etc/init.d/greengrass
+RestartSec=2
+Restart=always
+User=root
+PIDFile=/var/run/greengrassd.pid
+
+[Install]
+WantedBy=multi-user.target
