@@ -1,6 +1,23 @@
 import React from 'react';
+
+import Amplify, { API, Storage } from "aws-amplify";
+import { withAuthenticator } from 'aws-amplify-react';
+import awsmobile from "./aws-exports";
+
 import logo from './logo.svg';
 import './App.css';
+
+Amplify.configure(awsmobile);
+
+API.configure({
+  endpoints: [
+    {
+      name: "ApiGatewayRestApi",
+      // endpoint: "https://lr6ss16qj3.execute-api.us-east-1.amazonaws.com/dev"
+      endpoint: awsmobile.aws_cloud_logic_custom[0].endpoint
+    }
+  ]
+});
 
 function App() {
   return (
@@ -23,4 +40,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);
