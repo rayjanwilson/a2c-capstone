@@ -51,14 +51,6 @@ custom:
       appClient: UserPoolClientWeb
 
 functions:
-  # GearingApp:
-  #   module: lambdas/gearing
-  #   handler: gearing.handler_app
-  #   events:
-  #     - http:
-  #         path: /gearing/app
-  #         method: post
-  #         cors: true
   Sample:
     module: lambdas
     handler: sample.handler
