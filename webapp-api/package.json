@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "dependencies": {},
   "devDependencies": {
+    "aws-amplify-serverless-plugin": "^1.4.1",
+    "serverless": "^1.47.0",
     "serverless-python-requirements": "^4.3.0"
   }
 }

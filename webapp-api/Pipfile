@@ -4,9 +4,12 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+pytest = "*"
+pylint = "*"
 
 [packages]
 boto3 = "*"
+requests = "*"
 
 [requires]
 python_version = "3.7"
