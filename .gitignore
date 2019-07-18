@@ -67,3 +67,6 @@ venv/
 
 ## serverless.js
 .serverless
+
+## vscode
+.vscode
