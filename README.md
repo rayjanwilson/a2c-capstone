@@ -249,3 +249,28 @@ _NOTE: many of the config files are in `a2c-capstone/raspi3/configs`_
 - `aws greengrass get-service-role-for-account`
   - get the arn
 - `aws greengrass associate-service-role-to-account --role-arn <ROLE_ARN>`
+
+### Packaging up a lambda
+- right now it's recommended to do the packaging on a RasPi3
+  - possible issue is that the raspi 3 is armv7l, whereas we use x86-64 systems.
+  - there may be an issue for anything that requires .so files.
+  - the bme680 library depends on smbus which is not pure python.
+  - for now, do the build on a raspi3
+- stand up a raspi3 for development
+  - use base rasbian lite image
+  - `sudo apt-get install python3-pip`
+  - `pip3 install pipenv`
+  - reboot
+  - `mkdir build-pipenv`
+  - `cd build-pipenv/`
+  - `pipenv --python python3`
+  - `pipenv shell`
+- from your laptop, with vpn disabled, copy your files over to the dev pi
+  - `scp package-lambda.sh pi@raspberrypi.local:/home/pi/build-pipenv/`
+  - `scp gg_lambdas/* pi@raspberrypi.local:/home/pi/build-pipenv/`
+- from the dev RasPi3, run the build script
+  - make sure you're in `build-pipenv/`
+  - `./package-lambda.sh`
+- from your laptop, copy the zip over
+  - `scp pi@raspberrypi.local:/home/pi/build-pipenv/lambda.zip .`
+  - now upload to AWS Console 
