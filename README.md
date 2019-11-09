@@ -8,9 +8,9 @@
 ## Git Branching Strategy
 - We will use the [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) branching strategy
 - This strategy uses two branches to record the history of the project: **master** and **dev**
-- Each new feature should have its own branch, working off of dev (instead of branching off of master). 
+- Each new feature should have its own branch, working off of dev (instead of branching off of master).
 - Naming convention for feature branches: issueNumber-issueDescription. Do not use spaces. For example: *32-update-readme-git-branching-strategy*
-- When a feature is developed, it should be merged into dev through a pull request. 
+- When a feature is developed, it should be merged into dev through a pull request.
 - Dev will occasionally be merged into master through a pull request.
 
 ## Project Components and ownership
@@ -199,6 +199,14 @@ _NOTE: many of the config files are in `a2c-capstone/raspi3/configs`_
   - make `/etc/init.d/greengrass`
     ```bash
     #!/bin/sh
+    ### BEGIN INIT INFO
+    # Provides:          greengrass
+    # Required-Start:    $all
+    # Required-Stop:
+    # Default-Start:     2 3 4 5
+    # Default-Stop:
+    # Short-Description: Starts greengrass...
+    ### END INIT INFO
     mkdir -p /tmp/images
     chmod 777 /tmp/images
     mkdir -p /greengrass/certs
