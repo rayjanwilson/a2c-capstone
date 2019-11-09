@@ -238,6 +238,9 @@ _NOTE: many of the config files are in `a2c-capstone/raspi3/configs`_
   - `sudo systemctl enable greengrass.service`
     - makes sure the service is started at every boot
 
+- enable i2c-dev on boot
+  - add `i2c-dev` on it's own line to `/etc/modules`
+
 #### Configure GreenGrass
 
 - IoT console
