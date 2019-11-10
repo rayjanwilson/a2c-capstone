@@ -209,8 +209,6 @@ _NOTE: many of the config files are in `a2c-capstone/raspi3/configs`_
     # Default-Stop:
     # Short-Description: Starts greengrass...
     ### END INIT INFO
-    mkdir -p /tmp/images
-    chmod 777 /tmp/images
     mkdir -p /greengrass/certs
     mkdir -p /greengrass/config
     cp /boot/certs/* /greengrass/certs/
