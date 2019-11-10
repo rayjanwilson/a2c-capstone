@@ -26,6 +26,10 @@ def greengrass_run():
             sensor.data.temperature,
             sensor.data.pressure,
             sensor.data.humidity)
+        if sensor.data.heat_stable:
+            output = '{0},{1:.2f} Ohms'.format(
+                output,
+                sensor.data.gas_resistance)
     print(output)
     client.publish(topic='hello/world', payload='{}'.format(output))
 
