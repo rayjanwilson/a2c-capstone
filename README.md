@@ -259,7 +259,7 @@ _NOTE: many of the config files are in `a2c-capstone/raspi3/configs`_
 - stand up a raspi3 for development
   - use base rasbian lite image
   - `sudo apt-get install python3-pip`
-  - `pip3 install pipenv`
+  - `sudo pip3 install pipenv`
   - reboot
   - `mkdir build-pipenv`
   - `cd build-pipenv/`
