@@ -187,6 +187,8 @@ _NOTE: many of the config files are in `a2c-capstone/raspi3/configs`_
   - `ssh pi@raspberrypi.local`
     - you may have to delete an entry in `~/.ssh/known_hosts`
     - pw is `raspberry`
+    - for passwordless login using existing rsa keys
+      - `cat ~/.ssh/id_rsa.pub | ssh pi@raspberrypi.local 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys'`
   - `sudo apt-get update`
 - follow instructions outlined in greengrass documentation
   - [Module 1 - Environment Setup](https://docs.aws.amazon.com/greengrass/latest/developerguide/module1.html)
