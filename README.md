@@ -266,11 +266,19 @@ _NOTE: many of the config files are in `a2c-capstone/raspi3/configs`_
   - `pipenv --python python3`
   - `pipenv shell`
 - from your laptop, with vpn disabled, copy your files over to the dev pi
-  - `scp package-lambda.sh pi@raspberrypi.local:/home/pi/build-pipenv/`
   - `scp gg_lambdas/* pi@raspberrypi.local:/home/pi/build-pipenv/`
 - from the dev RasPi3, run the build script
   - make sure you're in `build-pipenv/`
   - `./package-lambda.sh`
 - from your laptop, copy the zip over
   - `scp pi@raspberrypi.local:/home/pi/build-pipenv/lambda.zip .`
-  - now upload to AWS Console 
+  - now upload to AWS Console
+  - publish new version
+  - point the alias to the new version
+
+
+## Troubleshooting
+- grab the pid
+  - `sudo tail /greengrass/ggc/var/log/system/runtime.log`
+- enter the container
+  - `sudo nsenter -t 6959 -m /bin/bash`
