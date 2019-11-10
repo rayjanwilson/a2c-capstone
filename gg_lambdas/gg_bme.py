@@ -4,6 +4,7 @@ import platform
 from threading import Timer
 import time
 import bme680
+import json
 
 client = greengrasssdk.client('iot-data')
 
@@ -18,18 +19,23 @@ sensor.set_gas_heater_temperature(320)
 sensor.set_gas_heater_duration(150)
 sensor.select_gas_heater_profile(0)
 
+def makeDict(data):
+    dataDict = {
+        "temperature_C": float(f'{data.temperature:.2f}'),
+        "pressure_hPa": float(f'{data.pressure:.2f}'),
+        "humidity_RH": float(f'{data.humidity:.2f}'),
+        "gas_resistance_Ohm": float(f'{data.gas_resistance:.2f}') or 0
+    }
+
+    return dataDict
+
 ## GreenGrass running stuff
 def greengrass_run():
-    output = 'no data'
+    output = '{}'
     if sensor.get_sensor_data():
-        output = '{0:.2f} C,{1:.2f} hPa,{2:.2f} %RH'.format(
-            sensor.data.temperature,
-            sensor.data.pressure,
-            sensor.data.humidity)
-        if sensor.data.heat_stable:
-            output = '{0},{1:.2f} Ohms'.format(
-                output,
-                sensor.data.gas_resistance)
+        dataDict = makeDict(sensor.data)
+        output = json.dumps(dataDict)
+
     print(output)
     client.publish(topic='hello/world', payload='{}'.format(output))
 
